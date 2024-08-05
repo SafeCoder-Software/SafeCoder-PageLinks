@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="plugin" group="content" method="upgrade">
+	<name>PLG_CONTENT_SAFECODERPAGELINKS</name>
+	<author>SafeCoder Software SRL</author>
+	<creationDate>2023-05</creationDate>
+	<copyright>(C) 2012 SafeCoder Software SRL.</copyright>
+	<license>GNU General Public License version 3; see LICENSE.txt</license>
+	<authorEmail>hello@safecoder.com</authorEmail>
+	<authorUrl>www.safecoder.com</authorUrl>
+	<version>1.0.0</version>
+	<description>PLG_CONTENT_SAFECODERPAGELINKS_XML_DESCRIPTION</description>
+
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install/install.mysql.sql</file>
+		</sql>
+	</install>
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall/uninstall.mysql.sql</file>
+		</sql>
+	</uninstall>
+
+	<files>
+		<filename plugin="safecoderpagelinks">safecoderpagelinks.php</filename>
+		<filename>index.html</filename>
+		<folder>language</folder>
+		<folder>sql</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/plg_content_safecoderpagelinks.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+
+			<fieldset name="scsSetup" label="PLG_CONTENT_SAFECODERPAGELINKS_SETUP">
+
+				<fieldset name="globalSettings"
+					label="PLG_CONTENT_SAFECODERPAGELINKS_GLOBAL_SETTINGS" description="PLG_CONTENT_SAFECODERPAGELINKS_GLOBAL_SETTINGS_DESC">
+
+					<field name="UseLinkTitle" type="radio" default="1"
+						label="PLG_CONTENT_SAFECODERPAGELINKS_GLOBAL_SETTINGS_USE_LINK"
+						description="PLG_CONTENT_SAFECODERPAGELINKS_GLOBAL_SETTINGS_USE_LINK_DESC"
+						class="btn-group btn-group-yesno">
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+					</field>
+
+					<field
+						name="LinkTitleNotAvailable"
+						type="list"
+						label="PLG_CONTENT_SAFECODERPAGELINKS_GLOBAL_SETTINGS_USE_LINK_NOT_AVAILABLE"
+						description="PLG_CONTENT_SAFECODERPAGELINKS_GLOBAL_SETTINGS_USE_LINK_NOT_AVAILABLE_DESC"
+						default="0"
+					>
+						<option value="0">
+							PLG_CONTENT_SAFECODERPAGELINKS_GLOBAL_SETTINGS_USE_LINK_NOT_AVAILABLE_CUSTOM</option>
+						<option value="1">
+							PLG_CONTENT_SAFECODERPAGELINKS_GLOBAL_SETTINGS_USE_LINK_NOT_AVAILABLE_URL</option>
+					</field>
+
+					<field name="LinkTitleCustomText" type="text"
+						label="PLG_CONTENT_SAFECODERPAGELINKS_GLOBAL_SETTINGS_USE_LINK_NOT_AVAILABLE_CUSTOM_TEXT"
+						description="PLG_CONTENT_SAFECODERPAGELINKS_GLOBAL_SETTINGS_USE_LINK_NOT_AVAILABLE_CUSTOM_TEXT_DESC"
+						default="See reference..." />
+
+					<field name="LinkTitleLimit" type="number"
+						label="PLG_CONTENT_SAFECODERPAGELINKS_GLOBAL_SETTINGS_USE_LINK_TITLE_LIMIT"
+						description="PLG_CONTENT_SAFECODERPAGELINKS_GLOBAL_SETTINGS_USE_LINK_TITLE_LIMIT_DESC"
+						step="1" min="0" default="0" />
+
+					<field name="LinkTitleContinuation" type="text"
+						label="PLG_CONTENT_SAFECODERPAGELINKS_GLOBAL_SETTINGS_LINK_TITLE_CONTINUATION"
+						description="PLG_CONTENT_SAFECODERPAGELINKS_GLOBAL_SETTINGS_LINK_TITLE_CONTINUATION_DESC"
+						default="..." />
+
+					<field name="OpenLinkIn" type="radio" default="1"
+						label="PLG_CONTENT_SAFECODERPAGELINKS_GLOBAL_SETTINGS_OPEN_LINK_IN"
+						description="PLG_CONTENT_SAFECODERPAGELINKS_GLOBAL_SETTINGS_OPEN_LINK_IN_DESC"
+						class="btn-group btn-group-yesno">
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+					</field>
+
+				</fieldset>
+
+				<fieldset name="ignorelinks" label="PLG_CONTENT_SAFECODERPAGELINKS_IGNORE_LINKS">
+
+					<field
+						name="IgnoreLinks"
+						type="subform"
+						label="PLG_CONTENT_SAFECODERPAGELINKS_IGNORE_LINKS_LIST"
+						description="PLG_CONTENT_SAFECODERPAGELINKS_IGNORE_LINKS_DESC"
+						multiple="true"
+						order="false"
+						min="0"
+						max="1000"
+					>
+						<form>
+							<field
+								name="LinkItem"
+								type="text"
+								label="PLG_CONTENT_SAFECODERPAGELINKS_IGNORE_LINKS_LIST_ITEM"
+								description="PLG_CONTENT_SAFECODERPAGELINKS_IGNORE_LINKS_LIST_ITEM_DESC"
+							/>
+						</form>
+					</field>
+
+				</fieldset>
+
+			</fieldset>
+
+		</fields>
+	</config>
+</extension>

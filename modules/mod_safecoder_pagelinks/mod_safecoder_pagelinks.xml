@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="module" client="site" method="upgrade">
+	<name>MOD_SAFECODER_PAGELINKS</name>
+	<author>SafeCoder Software SRL</author>
+	<creationDate>2023-05</creationDate>
+	<copyright>(C) 2012 SafeCoder Software SRL.</copyright>
+	<license>GNU General Public License version 3; see LICENSE.txt</license>
+	<authorEmail>hello@safecoder.com</authorEmail>
+	<authorUrl>www.safecoder.com</authorUrl>
+	<version>1.0.0</version>
+	<description>MOD_SAFECODER_PAGELINKS_XML_DESCRIPTION</description>
+	<files>
+		<filename module="mod_safecoder_pagelinks">mod_safecoder_pagelinks.php</filename>
+		<folder>src</folder>
+		<folder>tmpl</folder>
+        <folder>language</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/mod_safecoder_pagelinks.ini</language>
+		<language tag="en-GB">language/en-GB/mod_safecoder_pagelinks.sys.ini</language>
+	</languages>
+</extension>
