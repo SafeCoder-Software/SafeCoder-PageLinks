@@ -11,7 +11,7 @@
 	<description>MOD_SAFECODER_PAGELINKS_XML_DESCRIPTION</description>
 	<files>
 		<filename module="mod_safecoder_pagelinks">mod_safecoder_pagelinks.php</filename>
-		<folder>src</folder>
+		<folder>helper</folder>
 		<folder>tmpl</folder>
         <folder>language</folder>
 	</files>

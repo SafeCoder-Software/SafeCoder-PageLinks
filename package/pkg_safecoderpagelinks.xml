@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="package" version="3.1" method="upgrade">
+    <name>SafeCoder PageLinks</name>
+    <packagename>safecoderpagelinks</packagename>
+    <packager>SafeCoder Software SRL</packager>
+    <packagerurl>https://www.safecoder.com</packagerurl>
+    <author>SafeCoder Software SRL</author>
+    <creationDate>2023-04</creationDate>
+    <copyright>(C) 2012 SafeCoder Software SRL.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>hello@safecoder.com</authorEmail>
+    <authorUrl>www.safecoder.com</authorUrl>
+    <version>1.0.0</version>
+    <description>This package contains the Joomla! module and the system plugin. Don't forget to activate the plugin!</description>
+    <files folder="packages">
+        <file type="module" id="mod_safecoderpagelinks">mod_safecoder_pagelinks.zip</file>
+        <file type="plugin" id="plg_system_safecoderpagelinks" group="system">plg_system_safecoderpagelinks.zip</file>
+    </files>
+
+    <updateservers>
+        <server type="extension" priority="1" name="SafeCoder PageLinks - Free">https://updatefree.safecoder.com/pagelinks</server>
+    </updateservers>
+</extension>
